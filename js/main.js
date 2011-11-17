@@ -1,6 +1,6 @@
     //John Williams
-    //November 10, 2011
-    //VFW Deliverable 3
+    //November 17, 2011
+    //VFW Deliverable 4
     //Online Beer Store
 
 //alert("JavaScript works!");
@@ -101,7 +101,8 @@ window.addEventListener("DOMContentLoaded", function(){
 	function getData(){
 		toggleControls("on");
 		if(localStorage.length === 0){
-			alert("There is no data stored.");
+			autoFillData();
+			alert("There is no data in Local Storage so default data was added.");
 		}
 		//write data from local storage to the browser
 		var makeDiv = document.createElement('div');
@@ -128,6 +129,50 @@ window.addEventListener("DOMContentLoaded", function(){
 				makeSubList.appendChild(linksLi);
 			}
 			makeItemLinks(localStorage.key(i), linksLi); // Create our edit and delete buttons/links for each item in local storage.
+		}
+	}
+	
+	//JSON OBJECT Which will auto populate local storage.
+	function autoFillData(){
+		var json = {
+			"contact1": {
+				"fname": ["Name:", "Jay Williams"],
+				"email": ["Email:", "jay@fullsail.edu"],
+				"url": ["Url:", "www.clubugly.com"],
+				"sex": ["Sex:", "Male"],
+				"group": ["Beer Type:", "Bud Select"],
+				"borndate": ["Date of birth:", "2011-12-09"],
+				"quantity": ["Quantity:", "12"],
+				"comments": ["Additional Info:", "Make them cold!"],
+				"terms": ["TOS:", "Yes"]
+			},
+			"contact2": {
+				"fname": ["Name:", "Alvin Williams"],
+				"email": ["Email:", "alvin@gmail.com"],
+				"url": ["Url:", "www.google.com"],
+				"sex": ["Sex:", "Male"],
+				"group": ["Beer Type:", "Corona"],
+				"borndate": ["Date of birth:", "2000-07-06"],
+				"quantity": ["Quantity:", "6"],
+				"comments": ["Additional Info:", "Inlcude a mug!"],
+				"terms": ["TOS:", "Yes"]
+			},
+			"contact3": {
+				"fname": ["Name:", "Mike Williams"],
+				"email": ["Email:", "mike@hotmail.com"],
+				"url": ["Url:", "www.facebook.com"],
+				"sex": ["Sex:", "Male"],
+				"group": ["Beer Type:", "Sam Adams October Fest"],
+				"borndate": ["Date of birth:", "1976-06-06"],
+				"quantity": ["Quantity:", "4"],
+				"comments": ["Additional Info:", "How soon will I get them?"],
+				"terms": ["TOS:", "Yes"]
+			}						
+		};
+		//Store the JSON OBJECT in local storage
+		for(var n in json){
+		var id 			= Math.floor(Math.random()*100000001);
+		localStorage.setItem(id, JSON.stringify(json[n]));
 		}
 	}
 	
