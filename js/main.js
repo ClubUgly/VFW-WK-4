@@ -121,6 +121,7 @@ window.addEventListener("DOMContentLoaded", function(){
 			var obj = JSON.parse(value);
 			var makeSubList = document.createElement('ul');
 			makeli.appendChild(makeSubList);
+			getImage(obj.group[1], makeSubList);
 			for(var n in obj){
 				var makeSubli = document.createElement('li');
 				makeSubList.appendChild(makeSubli);
@@ -130,6 +131,15 @@ window.addEventListener("DOMContentLoaded", function(){
 			}
 			makeItemLinks(localStorage.key(i), linksLi); // Create our edit and delete buttons/links for each item in local storage.
 		}
+	}
+	
+	//get the image for the right category being displayed
+	function getImage(catName, makeSubList){
+		var imageLi = document.createElement('li');
+		makeSubList.appendChild(imageLi);
+		var newImg = document.createElement('img');
+		var setSrc = newImg.setAttribute("src", "images/"+ catName + ".png");
+		imageLi.appendChild(newImg);
 	}
 	
 	//JSON OBJECT Which will auto populate local storage.
@@ -162,7 +172,7 @@ window.addEventListener("DOMContentLoaded", function(){
 				"email": ["Email:", "mike@hotmail.com"],
 				"url": ["Url:", "www.facebook.com"],
 				"sex": ["Sex:", "Male"],
-				"group": ["Beer Type:", "Sam Adams October Fest"],
+				"group": ["Beer Type:", "Michelob Ultra"],
 				"borndate": ["Date of birth:", "1976-06-06"],
 				"quantity": ["Quantity:", "4"],
 				"comments": ["Additional Info:", "How soon will I get them?"],
@@ -327,7 +337,7 @@ window.addEventListener("DOMContentLoaded", function(){
 	}
 	
 	//Variable defaults
-	var beerSelection = ["--Choose your can of beer--", "Bud Light", "Bud Select", "Sam Adams Cherry", "Sam Adams October Fest", "Corona", "Corona Light", "Milwaukee's Best"],
+	var beerSelection = ["--Choose your can of beer--", "Bud Light", "Bud Select", "Heineken", "Michelob Ultra", "Corona", "Corona Light", "Miller Light"],
 		sexValue,
 		termsValue = "No",
 		errMsg = $('errors');	
