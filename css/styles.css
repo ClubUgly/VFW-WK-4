@@ -55,7 +55,7 @@ ul {
 	list-style:none;
 	background: #f1f1f1;
 	padding: 10px;
-	margin-top: 10px;
+	margin-top: 15px;
 	-moz-border-radius: 5px;
 	border-radius: 5px; 	
 }
@@ -102,6 +102,7 @@ ul {
 	width: 100%;
 	padding: 6px;
 	margin-top: 5px;
+	margin-bottom: 10px;	
 	-moz-border-radius: 5px;
 	border-radius: 5px;
 	text-decoration: none;
@@ -115,6 +116,7 @@ ul {
 	width: 100%;
 	padding: 6px;
 	margin-top: 5px;
+	margin-bottom: 10px;
 	-moz-border-radius: 5px;
 	border-radius: 5px;
 	-moz-box-shadow: 2px 2px 1px #888;
@@ -164,6 +166,10 @@ ul {
 .logo {
 	font-family:Tahoma, Geneva, sans-serif; /* over-ride default font */
 	color: #00CC00;
+}
+
+.extra {
+	margin: 5px;
 }
 
 

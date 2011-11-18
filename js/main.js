@@ -164,7 +164,7 @@ window.addEventListener("DOMContentLoaded", function(){
 				"group": ["Beer Type:", "Corona"],
 				"borndate": ["Date of birth:", "2000-07-06"],
 				"quantity": ["Quantity:", "6"],
-				"comments": ["Additional Info:", "Inlcude a mug!"],
+				"comments": ["Additional Info:", "Include a mug!"],
 				"terms": ["TOS:", "Yes"]
 			},
 			"contact3": {
@@ -181,8 +181,8 @@ window.addEventListener("DOMContentLoaded", function(){
 		};
 		//Store the JSON OBJECT in local storage
 		for(var n in json){
-		var id 			= Math.floor(Math.random()*100000001);
-		localStorage.setItem(id, JSON.stringify(json[n]));
+			var id 			= Math.floor(Math.random()*100000001);
+			localStorage.setItem(id, JSON.stringify(json[n]));
 		}
 	}
 	
